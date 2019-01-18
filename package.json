@@ -1,0 +1,23 @@
+{
+  "name": "wikistack",
+  "version": "1.0.0",
+  "description": "wikistack for FSA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./path/to/your/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pereslugoff/wikistack.git"
+  },
+  "author": "Nick P",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pereslugoff/wikistack/issues"
+  },
+  "homepage": "https://github.com/Pereslugoff/wikistack#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
