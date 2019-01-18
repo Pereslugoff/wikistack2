@@ -17,7 +17,7 @@ module.exports = () => layout(html`
         <input id="email" name="email" type="text" class="form-control"/>
       </div>
     </div>
-    
+
     <div class="form-group">
       <label for="title" class="col-sm-2 control-label">Page Title</label>
       <div class="col-sm-10">
@@ -31,13 +31,13 @@ module.exports = () => layout(html`
         <textarea id="content" rows="4" col="50" name="content" type="text-area" class="form-control"></textarea>
       </div>
     </div>
-    
+
     <div class="form-group">
       <label for="status" class="col-sm-2 control-label">Status</label>
       <div class="col-sm-10">
         <select name="status" id="status">
-          <option value="open">Open</option>
-          <option  value="closed">Closed</option>
+          <option selected value="open">Open</option>
+          <option value="closed">Closed</option>
         </select>
       </div>
     </div>
@@ -45,6 +45,6 @@ module.exports = () => layout(html`
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">submit</button>
     </div>
-  
+
   </form>
 `);

@@ -15,8 +15,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/wiki', wikiRouter)
 app.use(userRouter)
 
-app.get('/', function(req, res, next){
-  res.send(mainPage())
+app.get('/', async function(req, res, next){
+  const pages = await Page.findAll()
+  res.send(mainPage(pages))
 })
 
 async function Start() {
