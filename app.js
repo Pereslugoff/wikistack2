@@ -3,12 +3,17 @@ const express = require('express');
 const port = 3000;
 const mainPage = require('./views/main')
 const { db, Page, User } = require('./models')
+const { wikiRouter } = require('./routes/wiki')
+const { userRouter } = require('./routes/user')
+
 
 const app = express()
 
 app.use(morgan('dev'))
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
+app.use('/wiki', wikiRouter)
+app.use(userRouter)
 
 app.get('/', function(req, res, next){
   res.send(mainPage())
