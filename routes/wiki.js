@@ -1,6 +1,6 @@
 const wikiRouter = require('express').Router();
 const  addPage  = require('../views/addPage');
-const { Page } = require('../models');
+const { Page, User } = require('../models');
 const wikipage = require('../views/wikipage');
 
 wikiRouter.get('/', function(req, res, next){
@@ -14,8 +14,12 @@ wikiRouter.post('/', async function(req, res, next){
     content: req.body.content,
     status: req.body.status
   })
+
+
   try {
-    console.log(page)
+    const user = await User.findOrCreate({ where: {name: req.body.name, email: req.body.email }})
+    // console.log('The name of the new user is: ', user[0].dataValues.name)
+    page.dataValues.authorId = user[0].dataValues.id
     await page.save()
     let slug = page.dataValues.slug
     res.redirect(`/wiki/${slug}`)
